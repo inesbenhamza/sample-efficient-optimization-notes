@@ -1,6 +1,7 @@
 # sample-efficient-optimization-notes
 
-Gaussian processes
+Gaussian processes \
+
 Bayesian optimization
 Dimensionality reduction
 Variance reduction

@@ -1,7 +1,7 @@
 # OD Calibration with SUMO and Bayesian Optimization
 
 
-## 🎯 Problem Statement
+## Problem Statement
 In transportation networks, we often **do not know the true Origin–Destination (OD) matrix** (i.e., how many vehicles travel from each origin zone to each destination zone).  
 What we do have are **ground-truth edge counts** from detectors (e.g., how many vehicles passed through certain roads during a given time slot).  
 
@@ -10,9 +10,9 @@ The goal of **OD calibration** is to **estimate the OD matrix** that best reprod
 ## Formulation
 We define an optimization problem:
 
-\[
+$$
 x^* = \arg\min_x \; \mathrm{NRMSE}\big(S(x), y_{\text{gt}}\big)
-\]
+$$
 
 Where:
 - \(x\) = OD demands (number of vehicles per O–D pair).  

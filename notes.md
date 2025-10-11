@@ -124,4 +124,68 @@ Prediction:
 f(x_*) = k_*^T (K + \lambda I)^{-1} y
 \]
 
+
+
+
+### Gaussian Process Intuition
+
+A **Gaussian Process (GP)** is a *distribution over functions*.
+
+Formally, we write:
+
+\[
+f(x) \sim \mathcal{GP}\big(m(x), k(x, x')\big)
+\]
+
+This means that for any finite set of inputs
+
+\[
+X = [x_1, x_2, \ldots, x_N],
+\]
+
+the corresponding function values
+
+\[
+\mathbf{f} = [f(x_1), f(x_2), \ldots, f(x_N)]
+\]
+
+follow a **multivariate Gaussian distribution**:
+
+\[
+\mathbf{f} \sim \mathcal{N}\big(m(X), K(X, X)\big)
+\]
+
+where:
+- \( m(X) = [m(x_1), \ldots, m(x_N)] \) is the **mean vector**  
+- \( K(X, X) \) is the **covariance matrix** with entries \( K_{ij} = k(x_i, x_j) \)
+
+---
+
+### Intuition
+
+| Symbol | Meaning |
+|:-------|:---------|
+| \( f(x) \) | Random variable — function value at input \( x \) |
+| \( \mathcal{GP}(m, k) \) | Distribution over functions defined by mean \( m(x) \) and covariance \( k(x, x') \) |
+| \( m(x) \) | Mean function (expected value of \( f(x) \)) |
+| \( k(x, x') \) | Covariance function (how correlated \( f(x) \) and \( f(x') \) are) |
+| A sample \( f(x) \) | One possible function drawn from the GP distribution |
+| \( \mathbf{f} = [f(x_1), \ldots, f(x_N)] \) | A random vector following a multivariate normal distribution |
+
+---
+
+### Summary
+
+\[
+\underbrace{f(x)}_{\text{random variable at input } x}
+\quad \sim \quad
+\underbrace{\mathcal{GP}\big(m(x), k(x, x')\big)}_{\text{distribution over functions}}
+\]
+
+and for any finite input set:
+
+\[
+[f(x_1), f(x_2), \ldots, f(x_N)] \sim \mathcal{N}\big(m(X), K(X, X)\big)
+\]
+
 ---
